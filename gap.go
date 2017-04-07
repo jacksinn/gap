@@ -9,6 +9,7 @@ import (
 
 func main() {
 	// Setting up the default commit message.
+	// @todo Maintain a list of previous messages to cycle through. Maybe.
 	arg := "Default"
 	// Do we have any command line arguments?
 	if(len(os.Args) > 1){
