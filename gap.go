@@ -8,12 +8,17 @@ import (
 )
 
 func main() {
+	// Setting up the default commit message.
 	arg := "Default"
+	// Do we have any command line arguments?
 	if(len(os.Args) > 1){
+		// Set the commit message from the first argument passed.
 		arg = os.Args[1]
 	}
-	// fmt.Println(arg)
+
+	// The name of our git binary, I don't have the full path to git in, assuming git is available
 	cmdGit := "git"
+
 	//git add .
 	cmdArgs := []string{"add", "."}
 	tryExec(cmdGit, cmdArgs)
@@ -27,6 +32,7 @@ func main() {
 	tryExec(cmdGit, cmdArgs)
 }
 
+// Trying out being able to exec things. Just die if it fails.
 func tryExec(cmd string, cmdArgs []string){
 	out, err := exec.Command(cmd, cmdArgs...).Output()
 	if(err != nil){
